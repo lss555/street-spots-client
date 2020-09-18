@@ -1,13 +1,17 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 // import apiUrl from '../../apiConfig'
 // import axios from 'axios'
+import {
+  Card, CardText, CardBody, CardLink,
+  CardTitle, CardSubtitle
+} from 'reactstrap'
 import { indexSpots } from '../../api/spotsapi.js'
+import placeholder from '../shared/placeholder.jpg'
 
 class Spots extends Component {
   constructor (props) {
     super(props)
-    // setting initial state to be empty but would like it to be automatically loaded
     this.state = {
       spots: []
     }
@@ -15,30 +19,32 @@ class Spots extends Component {
 
   componentDidMount () {
     indexSpots(this.props.user)
-
-    // axios(`${apiUrl}/spots/`)
-    // headers: {
-    //   'Authorization': `Token ${user.token}`
-    // }
       .then(res => this.setState({ spots: res.data.spots }))
       .catch(console.error)
   }
 
   render () {
     const spots = this.state.spots.map(spot => (
-      <li key={spot._id}>
-        <Link to={`/spots/${spot._id}`}>
-          {spot.city}
-        </Link>
-      </li>
+      <div key={spot._id}>
+        <Card>
+          <CardBody>
+            <CardTitle>{spot.country}</CardTitle>
+            <CardSubtitle>{spot.city}</CardSubtitle>
+          </CardBody>
+          <img width="100%" src={placeholder} alt="Card image cap" />
+          <CardBody>
+            <CardText>{spot.description}</CardText>
+            <CardLink href="#">Card Link</CardLink>
+            <CardLink href="#">Another Link</CardLink>
+          </CardBody>
+        </Card>
+      </div>
     ))
-
+    console.log(spots)
     return (
       <div>
-        <h2>The Goods</h2>
-        <ul>
-          {spots}
-        </ul>
+        <h1>Spots</h1>
+        {spots}
       </div>
     )
   }
