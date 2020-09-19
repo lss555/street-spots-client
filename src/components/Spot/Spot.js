@@ -4,10 +4,10 @@ import {
   CardTitle, CardSubtitle, Spinner
 } from 'reactstrap'
 import placeholder from '../shared/placeholder.jpg'
-import { Link } from 'react-router-dom'
-// import { showSpot } from '../../api/spotsapi.js'
-import apiUrl from '../../apiConfig'
-import axios from 'axios'
+import { Link, withRouter } from 'react-router-dom'
+import { showSpot } from '../../api/spotsapi.js'
+// import apiUrl from '../../apiConfig'
+// import axios from 'axios'
 
 class Spot extends Component {
   constructor (props) {
@@ -18,14 +18,14 @@ class Spot extends Component {
   }
 
   componentDidMount () {
-    const showSpot = user => {
-      return axios({
-        url: apiUrl + `/spots/${this.props.user.id}`,
-        headers: {
-          'Authorization': `Token ${user.token}`
-        }
-      })
-    }
+    // const showSpot = user => {
+    //   return axios({
+    //     url: apiUrl + `/spots/${this.props.match.params.id}/`,
+    //     headers: {
+    //       'Authorization': `Token ${user.token}`
+    //     }
+    //   })
+    // }
 
     showSpot(this.props.user)
       .then(res => this.setState({ spot: res.data.spot }))
@@ -62,4 +62,4 @@ class Spot extends Component {
   }
 }
 
-export default Spot
+export default withRouter(Spot)

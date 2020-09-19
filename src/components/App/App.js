@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, withRouter } from 'react-router-dom'
 
 import AuthenticatedRoute from '../AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from '../AutoDismissAlert/AutoDismissAlert'
@@ -11,6 +11,7 @@ import ChangePassword from '../ChangePassword/ChangePassword'
 import Home from '../Home/Home'
 import Spots from '../Spots/Spots'
 import Spot from '../Spot/Spot'
+import CreateSpot from '../CreateSpot/CreateSpot'
 
 class App extends Component {
   constructor () {
@@ -70,10 +71,14 @@ class App extends Component {
             <Spot msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
           )} />
 
+          <AuthenticatedRoute user={user} path='/create-spot' render={() => (
+            <CreateSpot msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
+          )} />
+
         </main>
       </Fragment>
     )
   }
 }
 
-export default App
+export default withRouter(App)

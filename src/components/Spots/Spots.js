@@ -35,14 +35,13 @@ class Spots extends Component {
           <CardBody>
             <CardText>{spot.description}</CardText>
             <CardLink href="#spots/:id">Spot Link</CardLink>
-            <CardLink href="#">Another Link</CardLink>
           </CardBody>
         </Card>
       </div>
     ))
 
     return (
-      <div>
+      <div key={this.state.spots._id}>
         <h1>Spots</h1>
         {spots}
       </div>

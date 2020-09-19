@@ -7,6 +7,7 @@ const authenticatedOptions = (
     <Nav.Link href="#change-password">Change Password</Nav.Link>
     <Nav.Link href="#sign-out">Sign Out</Nav.Link>
     <Nav.Link href="#spots">Spots</Nav.Link>
+    <Nav.Link href="#create-spot">New Spot</Nav.Link>
   </Fragment>
 )
 
@@ -26,7 +27,7 @@ const alwaysOptions = (
 const Header = ({ user }) => (
   <Navbar bg="primary" variant="dark" expand="md">
     <Navbar.Brand href="#">
-      react-auth-template
+      Shred Mtns
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
