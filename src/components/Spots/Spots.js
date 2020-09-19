@@ -34,13 +34,13 @@ class Spots extends Component {
           <img width="100%" src={placeholder} alt="Card image cap" />
           <CardBody>
             <CardText>{spot.description}</CardText>
-            <CardLink href="#">Card Link</CardLink>
+            <CardLink href="#spots/:id">Spot Link</CardLink>
             <CardLink href="#">Another Link</CardLink>
           </CardBody>
         </Card>
       </div>
     ))
-    console.log(spots)
+
     return (
       <div>
         <h1>Spots</h1>

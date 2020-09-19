@@ -10,6 +10,7 @@ import SignOut from '../SignOut/SignOut'
 import ChangePassword from '../ChangePassword/ChangePassword'
 import Home from '../Home/Home'
 import Spots from '../Spots/Spots'
+import Spot from '../Spot/Spot'
 
 class App extends Component {
   constructor () {
@@ -61,8 +62,12 @@ class App extends Component {
             <Home msgAlert={this.msgAlert} user={user} />
           )} />
 
-          <AuthenticatedRoute user={user} path='/spots' render={() => (
+          <AuthenticatedRoute user={user} exact path='/spots' render={() => (
             <Spots msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
+          )} />
+
+          <AuthenticatedRoute user={user} path='/spots/:id' render={() => (
+            <Spot msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
           )} />
 
         </main>

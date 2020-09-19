@@ -9,3 +9,12 @@ export const indexSpots = user => {
     }
   })
 }
+
+// export const showSpot = user => {
+//   return axios({
+//     url: apiUrl + `/spots/${this.props.match.params.id}`,
+//     headers: {
+//       'Authorization': `Token ${user.token}`
+//     }
+//   })
+// }
