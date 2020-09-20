@@ -7,7 +7,7 @@ import {
   CarouselCaption
 } from 'reactstrap'
 import placeholder from '../shared/placeholder.jpg'
-import stubai from '../shared/stubai.jpg'
+import stubai2 from '../shared/stubai2.jpg'
 import street from '../shared/street.jpg'
 import './Home.css'
 const items = [
@@ -17,7 +17,7 @@ const items = [
     caption: 'Slide 1'
   },
   {
-    src: stubai,
+    src: stubai2,
     altText: 'Slide 2',
     caption: 'Slide 2'
   },

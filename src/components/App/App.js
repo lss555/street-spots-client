@@ -13,6 +13,7 @@ import Spots from '../Spots/Spots'
 import Spot from '../Spot/Spot'
 import CreateSpot from '../CreateSpot/CreateSpot'
 import YourSpots from '../YourSpots/YourSpots'
+import EditSpot from '../EditSpot/EditSpot'
 
 class App extends Component {
   constructor () {
@@ -79,6 +80,10 @@ class App extends Component {
 
           <AuthenticatedRoute user={user} path='/your-spots' render={() => (
             <YourSpots msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
+          )} />
+
+          <AuthenticatedRoute user={user} path='/your-spots/edit-spot' render={() => (
+            <EditSpot msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
           )} />
 
         </main>
