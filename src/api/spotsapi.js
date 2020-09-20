@@ -10,16 +10,14 @@ export const indexSpots = user => {
   })
 }
 
-export const showSpot = user => {
-  // const { match } = this.props
-  console.log(this.props)
-  return axios({
-    url: apiUrl + `/spots/${this.props.match.params.id}`,
-    headers: {
-      'Authorization': `Token ${user.token}`
-    }
-  })
-}
+// export const showSpot = user => {
+//   return axios({
+//     url: apiUrl + `/spots/${this.props.user.id}`,
+//     headers: {
+//       'Authorization': `Token ${user.token}`
+//     }
+//   })
+// }
 // export const createSpot = user => {
 //   return axios({
 //     url: `${apiUrl}/spots/`,
@@ -30,3 +28,13 @@ export const showSpot = user => {
 //     }
 //   })
 // }
+
+export const showSpot = (user) => {
+  return axios({
+    url: apiUrl + `/spots/${this.props.match.params.id}`,
+    method: 'GET',
+    headers: {
+      'Authorization': `Token ${user.token}`
+    }
+  })
+}

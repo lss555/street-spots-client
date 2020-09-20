@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
+import './header-styles.css'
 
 const authenticatedOptions = (
   <Fragment>
@@ -8,6 +9,7 @@ const authenticatedOptions = (
     <Nav.Link href="#sign-out">Sign Out</Nav.Link>
     <Nav.Link href="#spots">Spots</Nav.Link>
     <Nav.Link href="#create-spot">New Spot</Nav.Link>
+    <Nav.Link href="#your-spots">Your Spots</Nav.Link>
   </Fragment>
 )
 
@@ -25,7 +27,7 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-  <Navbar bg="primary" variant="dark" expand="md">
+  <Navbar bg="primary" variant="dark" expand="md" className='nav-bar'>
     <Navbar.Brand href="#">
       Shred Mtns
     </Navbar.Brand>

@@ -12,6 +12,7 @@ import Home from '../Home/Home'
 import Spots from '../Spots/Spots'
 import Spot from '../Spot/Spot'
 import CreateSpot from '../CreateSpot/CreateSpot'
+import YourSpots from '../YourSpots/YourSpots'
 
 class App extends Component {
   constructor () {
@@ -67,12 +68,17 @@ class App extends Component {
             <Spots msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
           )} />
 
-          <AuthenticatedRoute user={user} path='/spots/:id' render={() => (
-            <Spot msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
+          <AuthenticatedRoute user={user} exact path='/spots/:id' render={({ match }) => (
+            <Spot msgAlert={this.msgAlert} user={user}
+              match={match} />
           )} />
 
           <AuthenticatedRoute user={user} path='/create-spot' render={() => (
             <CreateSpot msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
+          )} />
+
+          <AuthenticatedRoute user={user} path='/your-spots' render={() => (
+            <YourSpots msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
           )} />
 
         </main>

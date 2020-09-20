@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 // import apiUrl from '../../apiConfig'
 // import axios from 'axios'
+import { withRouter } from 'react-router'
 import {
-  Card, CardText, CardBody, CardLink,
+  Card, CardText, CardBody,
   CardTitle, CardSubtitle
 } from 'reactstrap'
 import { indexSpots } from '../../api/spotsapi.js'
@@ -25,7 +26,7 @@ class Spots extends Component {
 
   render () {
     const spots = this.state.spots.map(spot => (
-      <div key={spot._id}>
+      <div key={spot.id}>
         <Card>
           <CardBody>
             <CardTitle>{spot.country}</CardTitle>
@@ -34,14 +35,14 @@ class Spots extends Component {
           <img width="100%" src={placeholder} alt="Card image cap" />
           <CardBody>
             <CardText>{spot.description}</CardText>
-            <CardLink href="#spots/:id">Spot Link</CardLink>
+            <Link to={`/spots/${spot.id}/`}>Spot Link</Link>
           </CardBody>
         </Card>
       </div>
     ))
-
+    // console.log(this.state.spots)
     return (
-      <div key={this.state.spots._id}>
+      <div key={this.state.spots.id}>
         <h1>Spots</h1>
         {spots}
       </div>
@@ -49,4 +50,4 @@ class Spots extends Component {
   }
 }
 
-export default Spots
+export default withRouter(Spots)

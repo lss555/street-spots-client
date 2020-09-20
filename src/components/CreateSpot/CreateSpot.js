@@ -4,6 +4,7 @@ import apiUrl from '../../apiConfig'
 import axios from 'axios'
 // import Form from 'react-bootstrap/Form'
 // import { createSpot } from '../../api/spotsapi.js'
+import './create-form.css'
 
 class CreateSpot extends Component {
   constructor (props) {
@@ -59,6 +60,7 @@ class CreateSpot extends Component {
       <form onSubmit={handleSubmit}>
         <label>Country</label>
         <input
+          className='create-form'
           placeholder="North Korea"
           value={spot.country}
           name="country"
@@ -67,6 +69,7 @@ class CreateSpot extends Component {
 
         <label>State</label>
         <input
+          className='create-form'
           placeholder="Florida"
           value={spot.state}
           name="state"
@@ -75,6 +78,7 @@ class CreateSpot extends Component {
 
         <label>City</label>
         <input
+          className='create-form'
           placeholder="Salt Lake City"
           value={spot.city}
           name="city"
@@ -83,6 +87,7 @@ class CreateSpot extends Component {
 
         <label>address</label>
         <input
+          className='create-form'
           placeholder="86 Bedford Street"
           value={spot.address}
           name="address"
@@ -91,21 +96,23 @@ class CreateSpot extends Component {
 
         <label>Description</label>
         <input
-          placeholder="bit of a cheese wedge"
+          className='create-form'
+          placeholder="bit of a cheese wedge eh?"
           value={spot.description}
           name="description"
           onChange={handleChange}
         />
 
         <label>Choose a season:</label>
-        <select title="season" value={spot.season} onChange={handleChange}
+        <select title="season"
+          className='create-form' value={spot.season} onChange={handleChange}
           name="season"
           required>
           <option value="Winter">Winter</option>
           <option value="Summer">Summer</option>
           <option value="Either">Either</option>
         </select>
-        <button type="submit">Submit</button>
+        <button className='submit-btn' type="submit">Submit</button>
       </form>
     )
   }

@@ -5,9 +5,9 @@ import {
 } from 'reactstrap'
 import placeholder from '../shared/placeholder.jpg'
 import { Link, withRouter } from 'react-router-dom'
-import { showSpot } from '../../api/spotsapi.js'
-// import apiUrl from '../../apiConfig'
-// import axios from 'axios'
+// import { showSpot } from '../../api/spotsapi.js'
+import apiUrl from '../../apiConfig'
+import axios from 'axios'
 
 class Spot extends Component {
   constructor (props) {
@@ -18,23 +18,23 @@ class Spot extends Component {
   }
 
   componentDidMount () {
-    // const showSpot = user => {
-    //   return axios({
-    //     url: apiUrl + `/spots/${this.props.match.params.id}/`,
-    //     headers: {
-    //       'Authorization': `Token ${user.token}`
-    //     }
-    //   })
-    // }
+    const showSpot = user => {
+      return axios({
+        url: apiUrl + `/spots/${this.props.match.params.id}`,
+        method: 'GET',
+        headers: {
+          'Authorization': `Token ${user.token}`
+        }
+      })
+    }
 
-    showSpot(this.props.user)
+    showSpot()
       .then(res => this.setState({ spot: res.data.spot }))
       .catch(console.error)
   }
 
   render () {
     const { spot } = this.state
-
     if (!spot) {
       return (
         <Spinner animation="border" role="status">
