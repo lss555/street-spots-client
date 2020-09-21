@@ -48,6 +48,7 @@ class Spots extends Component {
     return (
       <div key={this.state.spots.id}>
         <h1 className='spots-header'>Spots</h1>
+        <h3 className='spots-header'>{this.props.location.state ? this.props.location.state.message : null}</h3>
         <Row>
           {spots}
         </Row>

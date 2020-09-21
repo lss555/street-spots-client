@@ -56,7 +56,7 @@ class YourSpots extends Component {
               <CardText>{spot.description}</CardText>
               <CardLink href="#spots/:id/">Spot Link</CardLink>
               <CardLink href="#spots/update-spot">Edit</CardLink>
-              <button onClick={this.destroySpot}>Delete</button>
+              <button>Delete</button>
             </CardBody>
           </Card>
         </div> : null

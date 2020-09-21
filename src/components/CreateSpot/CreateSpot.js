@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Redirect } from 'react-router-dom'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
 // import Form from 'react-bootstrap/Form'
@@ -53,8 +53,7 @@ class CreateSpot extends Component {
     const { createdSpotId, spot } = this.state
 
     if (createdSpotId) {
-      // return <Redirect to='/spots' />
-      console.log('spot created')
+      return <Redirect to='/spots' />
     }
 
     return (

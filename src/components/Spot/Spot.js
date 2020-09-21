@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import {
-  Card, CardText, CardBody, CardLink,
-  CardTitle, CardSubtitle, Spinner
+  Card, CardText, CardBody,
+  CardTitle, CardSubtitle, Button
 } from 'reactstrap'
 import placeholder from '../shared/placeholder.jpg'
-import { Link, withRouter } from 'react-router-dom'
+import { Link, Redirect, withRouter } from 'react-router-dom'
 // import { showSpot } from '../../api/spotsapi.js'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
@@ -13,7 +13,8 @@ class Spot extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      spot: null
+      spot: null,
+      deleted: false
     }
   }
 
@@ -33,13 +34,33 @@ class Spot extends Component {
       .catch(console.error)
   }
 
+  deleteSpot = () => {
+    axios({
+      url: `${apiUrl}/spots/${this.props.match.params.id}/`,
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Token ${this.props.user.token}`
+      }
+    })
+      .then(() => this.setState({ deleted: true }))
+      .catch(console.error)
+  }
+
   render () {
-    const { spot } = this.state
+    const { spot, deleted } = this.state
+
+    if (deleted) {
+      return <Redirect to={{
+        pathname: '/spots',
+        state: { message: 'Deleted spot successfully' }
+      }} />
+    }
+
     if (!spot) {
       return (
-        <Spinner animation="border" role="status">
-          <span className="sr-only">Loading...</span>
-        </Spinner>
+        <div>
+          <h1>Loading...</h1>
+        </div>
       )
     }
 
@@ -54,7 +75,10 @@ class Spot extends Component {
           <CardBody>
             <CardText>{spot.description}</CardText>
             <Link to="/spots">Back to Spots</Link>
-            <CardLink href="#">Another Link</CardLink>
+            <Button variant="danger" onClick={this.deleteSpot} >Delete</Button>
+            <Link to={`/spots/${spot.id}/edit`}>
+              <Button>Edit Spot</Button>
+            </Link>
           </CardBody>
         </Card>
       </div>

@@ -71,6 +71,7 @@ class App extends Component {
 
           <AuthenticatedRoute user={user} exact path='/spots/:id' render={({ match }) => (
             <Spot msgAlert={this.msgAlert} user={user}
+              clearUser={this.clearUser}
               match={match} />
           )} />
 
@@ -83,7 +84,7 @@ class App extends Component {
             <YourSpots msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
           )} />
 
-          <AuthenticatedRoute user={user} path='/your-spots/edit-spot' render={() => (
+          <AuthenticatedRoute user={user} path='/spots/:id/edit' render={() => (
             <EditSpot msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
           )} />
 
