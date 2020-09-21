@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
-import apiUrl from '../../apiConfig'
-import axios from 'axios'
+import { Link } from 'react-router-dom'
+// import apiUrl from '../../apiConfig'
+// import axios from 'axios'
 import {
-  Card, CardText, CardBody, CardLink,
+  Card, CardText, CardBody,
   CardTitle, CardSubtitle
 } from 'reactstrap'
 import { indexSpots } from '../../api/spotsapi.js'
@@ -24,25 +24,7 @@ class YourSpots extends Component {
       .catch(console.error)
   }
 
-  destroySpot = (user) => {
-    axios({
-      url: apiUrl + '/spots/',
-      mathod: 'DELETE',
-      headers: {
-        'Authorization': `Token ${user.token}`
-      }
-    })
-      .then(() => this.setState({ deleted: true }))
-      .catch(console.error)
-  }
-
   render () {
-    const { deleted } = this.state
-
-    if (deleted) {
-      return <Redirect to='/'/>
-    }
-
     const spots = this.state.spots.map(spot => (
       this.props.user.id === spot.owner
         ? <div key={spot.id}>
@@ -54,9 +36,7 @@ class YourSpots extends Component {
             <img width="100%" src={placeholder} alt="Card image cap" />
             <CardBody>
               <CardText>{spot.description}</CardText>
-              <CardLink href="#spots/:id/">Spot Link</CardLink>
-              <CardLink href="#spots/update-spot">Edit</CardLink>
-              <button>Delete</button>
+              <Link to={`/spots/${spot.id}/`}>More on this spot</Link>
             </CardBody>
           </Card>
         </div> : null

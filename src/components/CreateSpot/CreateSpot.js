@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withRouter, Redirect } from 'react-router-dom'
+import { withRouter, Redirect, Link } from 'react-router-dom'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
 // import Form from 'react-bootstrap/Form'
@@ -115,6 +115,9 @@ class CreateSpot extends Component {
           <option value="Either">Either</option>
         </select>
         <button bg='dark' className='submit-btn' type="submit">Submit</button>
+        <Link to='/spots'>
+          <button bg='dark' className='cancel-btn'>Cancel</button>
+        </Link>
       </form>
     )
   }

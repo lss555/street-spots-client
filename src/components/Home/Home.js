@@ -10,6 +10,7 @@ import {
 import stubai2 from '../shared/stubai2.jpg'
 import beartooth from '../shared/beartooth.jpg'
 import gorgeroad from '../shared/gorgeroad.jpg'
+import barnum from '../shared/barnum.jpg'
 import './Home.css'
 const items = [
   {
@@ -29,6 +30,12 @@ const items = [
     altText: 'Beartooth Basin',
     caption: 'Read Lodge Montana',
     header: 'Beartooth Basin'
+  },
+  {
+    src: barnum,
+    altText: 'Barnum dirt jumps',
+    caption: 'Denver, CO',
+    header: 'Barnum dirt jumps'
   }
 ]
 

@@ -66,7 +66,7 @@ class Spot extends Component {
 
     return (
       <div key={spot._id}>
-        <Card>
+        <Card className="text-white text-center spot-card" body inverse style={{ backgroundColor: '#343a40', borderColor: '#343a40' }}>
           <CardBody>
             <CardTitle>{spot.country}</CardTitle>
             <CardSubtitle>{spot.city}</CardSubtitle>
@@ -74,11 +74,15 @@ class Spot extends Component {
           <img width="100%" src={placeholder} alt="Card image cap" />
           <CardBody>
             <CardText>{spot.description}</CardText>
-            <Link to="/spots">Back to Spots</Link>
-            <Button variant="danger" onClick={this.deleteSpot} >Delete</Button>
-            <Link to={`/spots/${spot.id}/edit`}>
-              <Button>Edit Spot</Button>
-            </Link>
+            <Link to="/spots" className="back-btn">Back to Spots</Link>
+            { this.props.user.id === spot.owner
+              ? <div>
+                <Link to={`/spots/${spot.id}/edit`}>
+                  <Button className="edit-btn">Edit Spot</Button>
+                </Link>
+                <Button className="delete-btn" onClick={this.deleteSpot}>Delete</Button>
+              </div>
+              : null }
           </CardBody>
         </Card>
       </div>

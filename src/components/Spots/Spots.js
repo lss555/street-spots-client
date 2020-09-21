@@ -38,7 +38,7 @@ class Spots extends Component {
             <img width="100%" src={placeholder} alt="Card image cap" />
             <CardBody>
               <CardText>{spot.description}</CardText>
-              <Link to={`/spots/${spot.id}/`}>Spot Link</Link>
+              <Link to={`/spots/${spot.id}/`}>More on this spot</Link>
             </CardBody>
           </Card>
         </div>

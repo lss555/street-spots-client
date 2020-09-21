@@ -126,8 +126,8 @@ class EditSpot extends Component {
           <option value="Either">Either</option>
         </select>
         <button bg='dark' className='submit-btn' type="submit">Submit</button>
-        <Link to={`/spots/${spot.id}/edit`}>
-          <button>Cancel</button>
+        <Link to={`/spots/${spot.id}`}>
+          <button bg='dark' className='cancel-btn'>Cancel</button>
         </Link>
       </form>
     )
