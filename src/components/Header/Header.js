@@ -29,7 +29,7 @@ const alwaysOptions = (
 const Header = ({ user }) => (
   <Navbar bg="dark" variant="dark" expand="md" className='nav-bar'>
     <Navbar.Brand href="#/">
-      Shred Mtns
+      Siiick Spots
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
