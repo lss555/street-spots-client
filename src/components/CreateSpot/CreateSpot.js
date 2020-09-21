@@ -96,7 +96,9 @@ class CreateSpot extends Component {
         />
 
         <label>Description</label>
-        <input
+        <textarea
+          cols="10"
+          rows="10"
           className='create-form'
           placeholder="bit of a cheese wedge eh?"
           value={spot.description}

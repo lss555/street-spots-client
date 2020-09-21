@@ -28,7 +28,7 @@ class Spot extends Component {
       })
     }
 
-    showSpot()
+    showSpot(this.props.user)
       .then(res => this.setState({ spot: res.data.spot }))
       .catch(console.error)
   }

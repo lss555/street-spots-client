@@ -26,9 +26,9 @@ const items = [
   },
   {
     src: beartooth,
-    altText: 'Beartooth basin',
+    altText: 'Beartooth Basin',
     caption: 'Read Lodge Montana',
-    header: 'Beartooth Basin ski area'
+    header: 'Beartooth Basin'
   }
 ]
 
