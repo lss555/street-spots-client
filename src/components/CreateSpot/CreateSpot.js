@@ -19,7 +19,7 @@ class CreateSpot extends Component {
         description: '',
         season: ''
       },
-      createdSpotId: null
+      createdSpotId: ''
     }
   }
 
@@ -44,7 +44,7 @@ class CreateSpot extends Component {
         'Authorization': `Token ${this.props.user.token}`
       }
     })
-      .then(res => this.setState({ createdSpotId: res.data.spot._id }))
+      .then(res => this.setState({ createdSpotId: res.data.spot.id }))
       .catch(console.error)
   }
 
@@ -53,7 +53,7 @@ class CreateSpot extends Component {
     const { createdSpotId, spot } = this.state
 
     if (createdSpotId) {
-      return <Redirect to='/spots' />
+      return <Redirect to='/spots/' />
     }
 
     return (
