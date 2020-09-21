@@ -6,25 +6,29 @@ import {
   CarouselIndicators,
   CarouselCaption
 } from 'reactstrap'
-import placeholder from '../shared/placeholder.jpg'
+// import placeholder from '../shared/placeholder.jpg'
 import stubai2 from '../shared/stubai2.jpg'
-import street from '../shared/street.jpg'
+import beartooth from '../shared/beartooth.jpg'
+import gorgeroad from '../shared/gorgeroad.jpg'
 import './Home.css'
 const items = [
   {
-    src: placeholder,
-    altText: 'Slide 1',
-    caption: 'Slide 1'
+    src: gorgeroad,
+    altText: 'Gorge road dirtjumps',
+    caption: 'New Zealand',
+    header: 'Gorge road dirtjumps'
   },
   {
     src: stubai2,
-    altText: 'Slide 2',
-    caption: 'Slide 2'
+    altText: 'Stubai Zoo',
+    caption: 'Austria',
+    header: 'Stubai Zoo'
   },
   {
-    src: street,
-    altText: 'Slide 3',
-    caption: 'Slide 3'
+    src: beartooth,
+    altText: 'Beartooth basin',
+    caption: 'Read Lodge Montana',
+    header: 'Beartooth Basin ski area'
   }
 ]
 
@@ -58,7 +62,7 @@ const Home = (props) => {
         className='carousel'
       >
         <img className='p-image' src={item.src} alt={item.altText} />
-        <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+        <CarouselCaption captionText={item.caption} captionHeader={item.header} />
       </CarouselItem>
     )
   })

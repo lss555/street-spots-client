@@ -27,7 +27,7 @@ class YourSpots extends Component {
     const spots = this.state.spots.map(spot => (
       this.props.user.id === spot.owner
         ? <div key={spot.id}>
-          <Card>
+          <Card className="text-white your-spots-card" body inverse style={{ backgroundColor: '#333', borderColor: '#333' }}>
             <CardBody>
               <CardTitle>{spot.country}</CardTitle>
               <CardSubtitle>{spot.city}</CardSubtitle>
@@ -36,8 +36,8 @@ class YourSpots extends Component {
             <CardBody>
               <CardText>{spot.description}</CardText>
               <CardLink href="#spots/:id/">Spot Link</CardLink>
-              <CardLink href="#spots/update-spot">Spot Link</CardLink>
-              <CardLink href="#spots/delete-spot">Spot Link</CardLink>
+              <CardLink href="#spots/update-spot">Edit</CardLink>
+              <CardLink href="#spots/delete-spot">Delete</CardLink>
             </CardBody>
           </Card>
         </div> : null
@@ -45,6 +45,7 @@ class YourSpots extends Component {
 
     return (
       <div key={this.state.spots.id}>
+        <h1 className="spots-header">Your Spots</h1>
         {spots}
       </div>
     )

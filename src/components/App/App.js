@@ -75,7 +75,8 @@ class App extends Component {
           )} />
 
           <AuthenticatedRoute user={user} path='/create-spot' render={() => (
-            <CreateSpot msgAlert={this.msgAlert} clearUser={this.clearUser} user={user} />
+            <CreateSpot msgAlert={this.msgAlert} clearUser={this.clearUser} user={user}
+              history={history} />
           )} />
 
           <AuthenticatedRoute user={user} path='/your-spots' render={() => (
