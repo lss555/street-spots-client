@@ -7,7 +7,7 @@ const authenticatedOptions = (
   <Fragment>
     <Nav.Link href="#change-password">Change Password</Nav.Link>
     <Nav.Link href="#sign-out">Sign Out</Nav.Link>
-    <Nav.Link href="#spots">Spots</Nav.Link>
+    <Nav.Link href="#spots">Browse</Nav.Link>
     <Nav.Link href="#create-spot">New Spot</Nav.Link>
     <Nav.Link href="#your-spots">Your Spots</Nav.Link>
   </Fragment>
