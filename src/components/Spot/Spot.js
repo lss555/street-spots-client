@@ -5,7 +5,7 @@ import {
 } from 'reactstrap'
 import placeholder from '../shared/placeholder.jpg'
 import { Link, Redirect, withRouter } from 'react-router-dom'
-// import { showSpot } from '../../api/spotsapi.js'
+import './Spot.css'
 import apiUrl from '../../apiConfig'
 import axios from 'axios'
 

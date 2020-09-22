@@ -6,12 +6,12 @@ import {
   CarouselIndicators,
   CarouselCaption
 } from 'reactstrap'
-// import placeholder from '../shared/placeholder.jpg'
 import stubai2 from '../shared/stubai2.jpg'
 import beartooth from '../shared/beartooth.jpg'
 import gorgeroad from '../shared/gorgeroad.jpg'
 import barnum from '../shared/barnum.jpg'
 import './Home.css'
+
 const items = [
   {
     src: gorgeroad,
