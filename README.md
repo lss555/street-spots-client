@@ -14,7 +14,7 @@ Links:
 
 Planning:
 
-For planning I used the ERD and Wireframes to plan out the big picture and then everyday before starting to work I would figure what needs to get done and then review documentation on that topic and then build the component or piece of code.
+For planning I used the ERD and Wireframes to plan out the big picture and then everyday before starting to work I would figure what needs to get done and then review documentation on that topic and build that component or piece of code.
 
 ERD and Wireframes
 
@@ -40,10 +40,10 @@ Technoligies used:
 
 Unsolved problems:
 
-AWS photo upload
-Likes on posted spots
-Ability to filter and search spots
-User modle with user profiles
+- AWS photo upload
+- Likes on posted spots
+- Ability to filter and search spots
+- User modle with user profiles
 
 Set Up:
 
