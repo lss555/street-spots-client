@@ -43,7 +43,7 @@ Unsolved problems:
 - AWS photo upload
 - Likes on posted spots
 - Ability to filter and search spots
-- User modle with user profiles
+- User profiles
 
 Set Up:
 
