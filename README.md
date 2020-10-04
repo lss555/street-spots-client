@@ -22,21 +22,21 @@ https://imgur.com/a/WDrVDy0
 
 User Stories:
 
-As a user I want to be able to create a spot
-As a user I want to be able to view other users spots
-As a user I want to be able to view most liked spots
-As a user I want to be able to search spot by location
-As a user I want to be able to view my spots
-As a user I want to be able to edit my spots
-As a user I want to be able to delete my spots
+- As a user I want to be able to create a spot
+- As a user I want to be able to view other users spots
+- As a user I want to be able to view most liked spots
+- As a user I want to be able to search spot by location
+- As a user I want to be able to view my spots
+- As a user I want to be able to edit my spots
+- As a user I want to be able to delete my spots
 
 Technoligies used:
 
-Django
-PostgresSQL
-React
-JavaScript
-HTML/CSS
+- Django
+- PostgresSQL
+- React
+- JavaScript
+- HTML/CSS
 
 Unsolved problems:
 
